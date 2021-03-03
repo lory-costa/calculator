@@ -1,3 +1,31 @@
+create a body element style 
+ - set Text align to Centre 
+ - set a text font 
+
+Create a calculator class style 
+ - set width, height, colour and centre on screen 
+ - set a border radius if we want it curved 
+
+ Create a row class style 
+ - set display to block 
+
+ create a button element style 
+ - set a solid border (1-2px)
+ - set width, height, padding and margins,
+ - set a backgroud colour and font colour 
+ - set a border radius if we want it curved 
+
+ create a control class style 
+ - set background colour and font colour to different than the buttons 
+
+ create a tall class style 
+ - adjust the width and height, so that this paricular button takes up the place of two vertical buttons
+
+
+ 
+
+
+
 @import "bourbon";
 
 // Fonts
