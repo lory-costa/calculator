@@ -2,15 +2,14 @@
  - set Text align to Centre 
  - set a text font */
 body {
-  background-color: #90cbee;
+  background-color: #e8f2f7;
   text-align: center;
 }
 
 /*create title syle*/
 #title {
   padding-top: 10px;
-  margin-bottom: -10px;
-  color: #076094;
+  color: #c0d6e2;
 }
 
 /*Create a calculator class style 
@@ -18,17 +17,18 @@ body {
  - set a border radius if we want it curved*/
 .calculator {
   width: 250px;
-  height: 335px;
-  background-color: white;
+  height: 345px;
+  background-color: rgb(73, 67, 67);
   margin: 0 auto;
   border-radius: 5px;
-  text-align: center;
 }
 
 /*Create a row class style 
  - set display to block */
 .row {
   display: block;
+  display: flex;
+  justify-content: center;
 }
 
 /*create a button element style 
@@ -44,7 +44,7 @@ button {
   color: white;
   font-size: 1.1em;
   border-radius: 7px;
-  margin: 0 5px 8px;
+  margin: 0 9px 8px;
 }
 
 /*create a control class style 
@@ -55,20 +55,19 @@ button {
 
 /*create input style*/
 input[type="text"] {
-  background-color: white;
+  background-color: #abcfbe;
   border: 1px solid grey;
   line-height: 20px;
   width: 200px;
   font-size: 2em;
   direction: rtl;
   padding-right: 10px;
-  margin: 30px 0 20px;
+  margin: 0 10px 15px;
   border-radius: 5px;
 }
 
 /*create a tall class style 
  - adjust the width and height, so that this paricular button takes up the place of two vertical buttons */
 .tall {
-  height: 65px;
-  margin: 0 5px -10px;
+  height: 68px;
 }
