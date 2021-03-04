@@ -1,126 +1,84 @@
 //create an empty array that will store the first number given 
+let firstNum = [];
+
 //create an empty variable that will store what the user whats the calculator to do eg (multiply or divide). lets call this mode for now. eg let mode;
+let mode = undefined;
+
 //create an empty array that will store the second number given
+let secondNum = [];
 
 //create variable that stores the result - connect it to the result div/input text in the HTML
+let result = "";
+
+//create a variable that stores the text for the HTML input that shows the answer
+let input = document.getElementById("answer")
+
 
 //create a function named calculate, that will take in an argument of (value). The (value) will be dependant on what button the person presses. Eg when the 5 button is pressed, the onclick function will be called. eg calculate(5) function will be called.
 //Go back to HTML and create an onclick element for each button, then call the calculate function and put in the appropriate value
  
- 
-//In the function, create if/else if statements 
+function calculate (num) {
 
-  //first statement - (if (value) is a number OR (value) is ".") AND mode variable is EMPTY
-    //push (value) into first number array
+  if ((Number(num) || num == ".") && mode == undefined) {
+  //if number is pressed but mode not yet chosen, number goes into firstNum variable
+    firstNum.push(num);
+    input.value = firstNum.join("");
+    return;
 
-  //second statement - (if (value) is a number OR (value) is ".") AND mode variable is NOT EMPTY
-   //push (value) into second number array
+  } else if ((Number(num) || num == ".") && mode != undefined) {
+  //if number is pressed and mode is chosem, number goes into the secondNum variable
 
-   //third statement - if (value) is not a number AND value is not AC AND value is not EC AND value is not %
-    //make mode = (value)
-  
-  //third statment - if (value) is AC OR value is EC
-   //make first number, second number and mode empty
+    secondNum.push(num);
+    input.value = secondNum.join("")
+    return;
 
-   //fourth statment - if (value) is "="
-    //concat the first number array and make it into a string so it makes a whole number 
-    //store that into a variable
-    //parseInt variable to turn it into a number
-    //concat the second number array and make it into a string so it makes a whole number
-    //store that into a variable 
-    //parseInt variable to turn it into a number
+  } else if (num === "AC" || num === "EC") {
+  //clear everything if the clear buttons are pressed
+    firstNum = [];
+    secondNum = [];
+    mode = undefined;
+    input.value = "";
+    return;
 
-    //create another if/else statements 
-      //first statement - if mode is -
-        // result = number 1 - number 2 
+  } else if (!Number(num) && num != "%" && num != "=") {
+  //if mode is pressed, put it into mode variable 
 
-      //second statement - if mode is +
-        //result = number 1 + number 2
-
-      //third statment - if mode is /
-        //result = number 1/number 2
-
-      //fourth statement - if mode is *
-        //result = number 1 * number 2 
-
-    //clear first number, second number and mode variables
-    //return 
-    
-
-
-
-var entries = [];
-var total = 0;
-
-var temp = "";
-$("button").on("click", function () {
-  var val = $(this).text();
-
-  // Got a number, add to temp
-  if (!isNaN(val) || val === ".") {
-    temp += val;
-    $("#answer").val(temp.substring(0, 10));
-
-    // Got some symbol other than equals, add temp to our entries
-    // then add our current symbol and clear temp
-  } else if (val === "AC") {
-    entries = [];
-    temp = "";
-    total = 0;
-    $("#answer").val("");
-
-    // Clear last entry
-  } else if (val === "CE") {
-    temp = "";
-    $("#answer").val("");
-
-    // Change multiply symbol to work with eval
-  } else if (val === "x") {
-    entries.push(temp);
-    entries.push("*");
-    temp = "";
-
-    // Change divide symbol to work with eval
-  } else if (val === "÷") {
-    entries.push(temp);
-    entries.push("/");
-    temp = "";
-
-    // Got the equals sign, perform calculation
-  } else if (val === "=") {
-    entries.push(temp);
-
-    var nt = Number(entries[0]);
-    for (var i = 1; i < entries.length; i++) {
-      var nextNum = Number(entries[i + 1]);
-      var symbol = entries[i];
-
-      if (symbol === "+") {
-        nt += nextNum;
-      } else if (symbol === "-") {
-        nt -= nextNum;
-      } else if (symbol === "*") {
-        nt *= nextNum;
-      } else if (symbol === "/") {
-        nt /= nextNum;
-      }
-
-      i++;
+    if (firstNum.length === 0){
+    //if mode is pressed and there is already a previous result, make prev result into firstNum
+      firstNum = Array.from(String(result), Number);
     }
+    mode = num;
+    return;
 
-    // Swap the '-' symbol so text input handles it correctly
-    if (nt < 0) {
-      nt = Math.abs(nt) + "-";
+  } else if (num == "=") {
+  // if = is pressed, join the arrays of firstNum and Second Num
+    firstNum = firstNum.join("");
+    secondNum = secondNum.join("");
+
+  //Depending on what mode is pressed, calculate accordingly
+    switch (mode){
+      case "-" :
+        result = firstNum - secondNum;
+        break;
+      
+      case "+":
+        result = firstNum + secondNum;
+        break;
+
+      case "*":
+        result = firstNum * secondNum
+        break;
+
+      case "/":
+        result = firstNum / secondNum
+        break;
     }
-
-    $("#answer").val(nt);
-    entries = [];
-    temp = "";
-
-    // Push number
-  } else {
-    entries.push(temp);
-    entries.push(val);
-    temp = "";
+  // show result and clear everything
+    input.value = result;
+    firstNum = [];
+    secondNum = [];
+    mode = undefined;
+    return result;
   }
-});
+
+}
