@@ -19,13 +19,13 @@ let input = document.getElementById("answer")
  
 function calculate (num) {
 
-  if ((Number(num) || num == ".") && mode == undefined) {
+  if ((Number(num) || num == "." || num == 0) && mode == undefined) {
   //if number is pressed but mode not yet chosen, number goes into firstNum variable
     firstNum.push(num);
     input.value = firstNum.join("");
     return;
 
-  } else if ((Number(num) || num == ".") && mode != undefined) {
+  } else if ((Number(num) || num == "." || num == 0) && mode != undefined) {
   //if number is pressed and mode is chosem, number goes into the secondNum variable
 
     secondNum.push(num);
@@ -55,22 +55,27 @@ function calculate (num) {
     firstNum = firstNum.join("");
     secondNum = secondNum.join("");
 
+  // if secondNum is empty, just show the firstNum as the result
+    if (secondNum.length == 0){
+      result = firstNum
+    }
+  
   //Depending on what mode is pressed, calculate accordingly
     switch (mode){
       case "-" :
-        result = firstNum - secondNum;
+        result = (firstNum - secondNum);
         break;
       
       case "+":
-        result = firstNum + secondNum;
+        result = Number(firstNum) + Number(secondNum);
         break;
 
       case "*":
-        result = firstNum * secondNum
+        result = (firstNum * secondNum);
         break;
 
       case "/":
-        result = firstNum / secondNum
+        result = (firstNum / secondNum);
         break;
     }
   // show result and clear everything
