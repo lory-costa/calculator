@@ -1,20 +1,14 @@
-/* create a body element style 
- - set Text align to Centre 
- - set a text font */
 body {
   background-color: #e8f2f7;
   text-align: center;
 }
 
-/*create title syle*/
 #title {
   padding-top: 15px;
   color: #c0d6e2;
 }
 
-/*Create a calculator class style 
- - set width, height, colour and centre on screen 
- - set a border radius if we want it curved*/
+
 .calculator {
   width: 250px;
   height: 330px;
@@ -23,19 +17,12 @@ body {
   border-radius: 5px;
 }
 
-/*Create a row class style 
- - set display to block */
 .row {
   display: block;
   display: flex;
   justify-content: center;
+  height: 38px;
 }
-
-/*create a button element style 
- - set a solid border (1-2px)
- - set width, height, padding and margins,
- - set a backgroud colour and font colour 
- - set a border radius if we want it curved */
 
 button {
   width: 40px;
@@ -45,15 +32,14 @@ button {
   font-size: 1.1em;
   border-radius: 7px;
   margin: 0 9px 8px;
+
 }
 
-/*create a control class style 
- - set background colour and font colour to different than the buttons */
 .control {
   background-color: #e26060;
 }
 
-/*create input style*/
+
 input[type="text"] {
   background-color: #abcfbe;
   border: 1px solid grey;
@@ -66,8 +52,11 @@ input[type="text"] {
   border-radius: 5px;
 }
 
-/*create a tall class style 
- - adjust the width and height, so that this paricular button takes up the place of two vertical buttons */
 .tall {
   height: 68px;
+}
+
+.bottom {
+width: 192px;
+
 }
