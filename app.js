@@ -1,4 +1,4 @@
-//assign variables
+//define variables
 let firstNum = [];
 let secondNum = [];
 let mode = undefined;
@@ -44,46 +44,33 @@ function calculate(num) {
       case "-":
         result = firstNum - secondNum;
         break;
-
       case "+":
         result = Number(firstNum) + Number(secondNum);
         break;
-
       case "*":
         result = firstNum * secondNum;
         break;
-
       case "/":
         result = firstNum / secondNum;
         break;
     }
-  
-
-  } else if (num == "%"){
-
+  } else if (num == "%") {
     firstNum = firstNum.join("");
     secondNum = secondNum.join("");
-
-    switch(mode){
-      case '+':
-        result = firstNum * (Number(secondNum/100) + Number(1));
+    switch (mode) {
+      case "+":
+        result = firstNum * (Number(secondNum / 100) + Number(1));
         break;
-      
-      case '*':
-        result = firstNum * secondNum/100;
+      case "*":
+        result = (firstNum * secondNum) / 100;
         break;
-
-      case '-':
-        result = firstNum * ((100-secondNum)/100);
+      case "-":
+        result = firstNum * ((100 - secondNum) / 100);
         break;
-
-      case '/':
-        result = firstNum * (100/secondNum);
+      case "/":
+        result = firstNum * (100 / secondNum);
         break;
-
     }
-  
-
   }
   // show result and clear everything
   input.value = result;
