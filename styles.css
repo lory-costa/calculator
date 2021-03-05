@@ -8,7 +8,7 @@ body {
 
 /*create title syle*/
 #title {
-  padding-top: 10px;
+  padding-top: 15px;
   color: #c0d6e2;
 }
 
@@ -17,7 +17,7 @@ body {
  - set a border radius if we want it curved*/
 .calculator {
   width: 250px;
-  height: 345px;
+  height: 330px;
   background-color: rgb(73, 67, 67);
   margin: 0 auto;
   border-radius: 5px;
