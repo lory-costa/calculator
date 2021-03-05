@@ -1,68 +1,88 @@
-<!-- create an HTML document with a head and body -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="calculator">
-      <!-- Create a p tag with the text "Lory and Ysabel's Calculator" -->
-      <p id="title">
-        LORY & YSABEL'S <br />
-        CALCULATOR
-      </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="calculator">
+    <p id="title">
+      LORY & YSABEL'S <br />
+      CALCULATOR
+    </p>
 
-      <!-- Create an input tag with a text type OR an empty div tag. Whichever one is picked, should have an id of "answer"  -->
-      <input type="text" disabled="disabled" id="answer" />
+    <!-- Create an input tag with a text type to showcase the answer -->
+    <input type="text" disabled="disabled" id="answer" />
 
-      <!-- Inside each row, create 4 buttons. The innerText for each button in each row is as follows -->
-      <!-- First Row - AC , CE , % , /    //the AC and the CE button will have a class of control -->
-      <div class="row">
-        <button class="control" onclick="calculate('AC')">AC</button>
-        <button class="control" onclick="calculate('EC')">CE</button>
-        <button onclick="calculate('%')">%</button>
-        <button onclick="calculate('/')">÷</button>
-      </div>
-      <!-- Second Row - 7 , 8 , 9, x -->
-      <div class="row">
-        <button onclick="calculate(7)">7</button>
-        <button onclick="calculate(8)">8</button>
-        <button onclick="calculate(9)">9</button>
-        <button onclick="calculate('*')">x</button>
-      </div>
-      <!-- Third Row - 4 , 5 , 6 , - -->
-      <div class="row">
-        <button onclick="calculate(4)">4</button>
-        <button onclick="calculate(5)">5</button>
-        <button onclick="calculate(6)">6</button>
-        <button onclick="calculate('-')">-</button>
-      </div>
+    <!-- Inside each row, create 4 buttons -->
+    <div class="row">
+      <button class="control" onclick="calculate('AC')">AC</button>
+      <button class="control" onclick="calculate('EC')">CE</button>
+      <button onclick="calculate('%')">%</button>
+      <button onclick="calculate('/')">÷</button>
+    </div>
+    
+    <div class="row">
+      <button onclick="calculate(7)">7</button>
+      <button onclick="calculate(8)">8</button>
+      <button onclick="calculate(9)">9</button>
+      <button onclick="calculate('*')">x</button>
+    </div>
+    
+    <div class="row">
+      <button onclick="calculate(4)">4</button>
+      <button onclick="calculate(5)">5</button>
+      <button onclick="calculate(6)">6</button>
+      <button onclick="calculate('-')">-</button>
+    </div>
 
-      <div class="row">
-        <!-- Fourth Row - 1 , 2 , 3 , +     //the + button will have a class of tall-button -->
-        <div class="col">
-          <div class="row">
-            <button onclick="calculate(1)">1</button>
-            <button onclick="calculate(2)">2</button>
-            <button onclick="calculate(3)">3</button>
-          </div>
-
-          <!-- Fifth Row - 0 , . , = -->
-          <div class="row">
-            <button onclick="calculate(0)">0</button>
-            <button onclick="calculate('.')">.</button>
-            <button onclick="calculate('=')">=</button>
-          </div>
-        </div>
-
-        <div class="col">
+    <div class="row">
+      
+      
+        
+          <button onclick="calculate(1)">1</button>
+          <button onclick="calculate(2)">2</button>
+          <button onclick="calculate(3)">3</button>
           <button class="tall" onclick="calculate('+')">+</button>
         </div>
-      </div>
-    </div>
-  </body>
-  <script src="app.js"></script>
+
+        
+        <div class="row bottom">
+          <button onclick="calculate(0)">0</button>
+          <button onclick="calculate('.')">.</button>
+          <button onclick="calculate('=')">=</button>
+        </div>
+      
+
+   
+        
+      
+    
+  </div>
+</body>
+<script src="app.js"></script>
 </html>
+
+<!-- <div class="row">
+      
+  <div class="col">
+    <div class="row">
+      <button onclick="calculate(1)">1</button>
+      <button onclick="calculate(2)">2</button>
+      <button onclick="calculate(3)">3</button>
+    </div>
+
+    
+    <div class="row">
+      <button onclick="calculate(0)">0</button>
+      <button onclick="calculate('.')">.</button>
+      <button onclick="calculate('=')">=</button>
+    </div>
+  </div>
+
+  <div class="col">
+    <button class="tall" onclick="calculate('+')">+</button>
+  </div>
+</div> -->
