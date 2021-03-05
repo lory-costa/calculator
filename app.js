@@ -57,11 +57,38 @@ function calculate(num) {
         result = firstNum / secondNum;
         break;
     }
-    // show result and clear everything
-    input.value = result;
-    firstNum = [];
-    secondNum = [];
-    mode = undefined;
-    return result;
+  
+
+  } else if (num == "%"){
+
+    firstNum = firstNum.join("");
+    secondNum = secondNum.join("");
+
+    switch(mode){
+      case '+':
+        result = firstNum * (Number(secondNum/100) + Number(1));
+        break;
+      
+      case '*':
+        result = firstNum * secondNum/100;
+        break;
+
+      case '-':
+        result = firstNum * ((100-secondNum)/100);
+        break;
+
+      case '/':
+        result = firstNum * (100/secondNum);
+        break;
+
+    }
+  
+
   }
+  // show result and clear everything
+  input.value = result;
+  firstNum = [];
+  secondNum = [];
+  mode = undefined;
+  return result;
 }
